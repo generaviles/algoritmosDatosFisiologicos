@@ -1,0 +1,7 @@
+"0","a <- fun(o,x) #ejecutando la función con los datos de Iris."
+"1","Proceso terminado en: "
+"1"," "
+"1","17.55172"
+"1"," "
+"1","milisegundos."
+"0","res <- as.data.frame(cbind(a,iris[,5])) #data.frame que contiene los valores resultado de la función de activación del perceptrón y el valor de la variable objetivo en la base de datos Iris."

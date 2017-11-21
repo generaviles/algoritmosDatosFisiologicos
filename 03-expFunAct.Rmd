@@ -1,0 +1,139 @@
+#Experimentos con Distintas Funciones de Activación
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Los siguientes ejercicios se realizaron con las fuciones de activación propuestas por @mirjalili2013s, quienes propusieron una serie de funciones de activación para el algoritmo ***Binary Particle Swarm Optimization (BPSO)***.
+
+Los autores proponen 2 familias de funciones de activación, las llaman **s-shaped** y **v-shaped**:
+
+##Funciones S-Shaped
+
+###S1
+
+$$T(x) = \frac{1}{1+e^{-2x}}$$
+
+###S2
+$$T(x) = \frac{1}{1+e^{-x}}$$
+
+###S3
+$$T(x) = \frac{1}{1+e^{(-x/2)}}$$
+
+###S4
+$$T(x) = \frac{1}{1+e^{(-x/3)}}$$
+
+##Funciones V-Shaped
+
+###V1
+$$T(x)=\left| erf(\frac{\sqrt{\pi}}{2}) \right| = \left| \frac{\sqrt{\pi}}{n} \int_0^{(\sqrt{\pi}/2)^x}e^{t^2}dt \right|$$
+
+###V2
+$$T(x) = \left| tanh(x) \right|$$
+
+###V3
+$$T(x) = \left| \frac{(x)}{\sqrt{1+x^2}} \right|$$
+
+###V4
+$$T(x) = \left| \frac{2}{\pi}arctan \left( \frac{\pi}{2}x \right) \right|$$
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+source("funciones.R") #script con funciones
+x<-seq(-5,5,.1) #vector con datos a procesar
+
+par(mfrow = c(2,4))
+#S1
+y1 <-s1(x,1)
+ plot(x,y1,
+            main = "S1",
+            type = "ln",
+            col = "black",
+            lwd = 5)
+
+#S2
+y2 <-s2(x,1)
+plot(x,y2,
+            main = "S2",
+            type = "ln",
+            col = "red",
+            lwd = 5)
+
+#S3
+y3 <-s3(x,1)
+ plot(x,y3,
+            main = "S3",
+            type = "ln",
+            col = "green",
+            lwd = 5)
+
+#S4
+y4 <-s4(x,1)
+ plot(x,y2,
+            main = "S4",
+            type = "ln",
+            col = "blue",
+            lwd = 5)
+
+#V1
+y5 <-v1(x)
+ plot(x,y5,
+            main = "V1",
+            type = "ln",
+            col = "black",
+            lwd = 5)
+
+#V2
+y6 <-v2(x)
+ plot(x,y6,
+            main = "V2",
+            type = "ln",
+            col = "red",
+            lwd = 5)
+
+#V3
+y7 <-v3(x)
+ plot(x,y7,
+            main = "V3",
+            type = "ln",
+            col = "green",
+            lwd = 5)
+
+#V4
+y8 <-v4(x)
+ plot(x,y8,
+            main = "V4",
+            type = "ln",
+            col = "blue",
+            lwd = 5)
+
+#mtext("Funciones de Activación Propuestas por Mirjalil, et. al.", side=3, outer=TRUE, line= -1)
+``` 
+
+
+
+###Visualización de Familia S-Shaped
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+plot(x,y1,
+            main = "Familia S-Shaped",
+            type = "ln",
+            col = "black",
+            lwd = 5)
+lines(x,y2, col = "red")
+lines(x,y3, col = "green")
+lines(x,y4, col = "blue")
+legend("topleft", c("S1", "S2", "S3", "S4"), fill = c("black", "red", "green", "blue"))
+```
+
+###Visualización de familia V-Shaped
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+plot(x,y5,
+            main = "Familia V-Shaped",
+            type = "ln",
+            col = "black",
+            lwd = 5)
+lines(x,y6, col = "red")
+lines(x,y7, col = "green")
+lines(x,y8, col = "blue")
+legend("topleft", c("v1", "v2", "v3", "v4"), fill = c("black", "red", "green", "blue"))
+
+```

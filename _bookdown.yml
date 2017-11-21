@@ -1,0 +1,6 @@
+book_filename: "algoritmos-fisiologicos"
+language:
+  ui:
+    chapter_name: "Capítulo "
+output_dir: "docs"
+delete_merged_file: TRUE

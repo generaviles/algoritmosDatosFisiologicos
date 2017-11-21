@@ -1,0 +1,85 @@
+#Ejercicio con Datos Cercanos a Cero
+
+En éste ejercicio busco probar el rendimiento de funciones de activación *V-Shaped* con números cercanos a cero.
+
+
+##Base de datos para éste ejercicio
+
+Para éste ejercicio se estará utilizando la base de datos **Sonar** publicada por @gorman1988analysis, quienes utilizaron redes neuronales artificiales para clasificar datos de sonares.
+```{r}
+head(iris)
+```
+Contiene 150 entradas con 4 *features* y 1 variable objetivo (especie de la planta).
+
+##Preparación de los datos para uso del perceptrón
+
+###Selección y preparacion de subconjunto de datos
+```{r}
+library(pracma)
+o <- matrix(c(0.25,0.32,0.30,0.28), ncol = 4, nrow = 1) #pesos expresados como una matriz de 1x4.
+
+  
+x <-as.matrix(iris[,1:4]) #Conviertiendo los datos de Iris a matriz y excluyendo la variable objetivo.
+ot <- t(o)
+```
+
+
+##Explorando resultados por función
+
+```{r}
+set.seed(123)
+source("funciones.R")
+
+
+perceptron<-function(x,o,fun){
+  switch(fun,
+         s1 = 1/(1+exp(x %*% (-2*t(o)))),
+         s2 = 1/(1+exp(x %*% (-1*t(o)))),
+         s3 = 1/(1+exp((x %*% (-1*t(o))))/2),
+         s4 = 1/(1+exp((x %*% (-1*t(o)))/3)),
+         v1 = abs(erf((sqrt(pi)/2)*x %*% t(o))),
+         v2 = abs(tanh(x %*% t(o))),
+         v3 = abs((x %*% t(o))/(sqrt(1+x^2 %*% t(o)))),
+         v4 = abs((2/pi)*atan((pi/2)*x %*% t(o)))
+         
+  )
+}
+
+a <- perceptron(x,o,"v4") #ejecutando la función con los datos de Iris.
+
+res <- as.data.frame(cbind(a,iris[,5])) #data.frame que contiene los valores resultado de la función de activación del perceptrón y el valor de la variable objetivo en la base de datos Iris.
+
+colors <- c("#3498DB", "#F7DC6F", "#82E0AA")
+res$V2 <- as.factor(res$V2)
+
+plot(res$V1,
+     col = colors[res$V2],
+     pch = 19,
+     xlab = "Instancias",
+     ylab = "Valores",
+     main = "Clasificación Final por el Perceptrón")
+legend("bottomright", #inset = c(-0.2,0),
+       legend = c("Setosa","Versicolor", "Virginica"),
+       fill = c("#3498DB", "#F7DC6F", "#82E0AA"))
+```
+
+###Boxplots
+
+```{r}
+library(reshape2)
+library(ggplot2)
+
+
+testMelt <- melt(res, id.var = "V2")
+testMelt$V2 <- as.factor(testMelt$V2)
+
+g <- ggplot(testMelt,
+       aes(x = variable, y = value)) +
+  geom_boxplot(aes(fill = V2)) +
+  labs(title = "Valores Provistos por Perceptrón por Etiqueta en Base de Datos IRIS",
+       x = "Valores",
+       y = "Grupos",
+       caption = "Valores obtenidos de un perceptrón con una función de activación logística.")
+g 
+
+```

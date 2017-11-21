@@ -1,0 +1,20 @@
+--- 
+title: "Algoritmos para el Análisis de Datos Fisiológicos"
+author: "Gener Avilés R"
+date: "`r Sys.Date()`"
+abstract: Apuntes de clases.
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Introducción
+
+Éste curso es impartido en la ***Maestría y Doctorado en Ciencias e Ingeniería (MyDCI)*** de la Facultad de Ingeniería, Arquitectura y Diseño de la Universidad Autónoma de Baja California, campus Ensenada.
+
+El curso es impartido por la [Dra. María de los Ángeles Cosío León](https://www.researchgate.net/profile/Maria_Cosio_Leon).
+

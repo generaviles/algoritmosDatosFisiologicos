@@ -1,0 +1,7 @@
+"0","#v2"
+"0","plot(resIrisModV2$V1,"
+"0","     col = colors[resIrisModV2$V2],"
+"0","     pch = 19,"
+"0","     xlab = ""Instancias"","
+"0","     ylab = ""Valores"","
+"0","     main = ""v2"")"

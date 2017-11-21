@@ -1,0 +1,101 @@
+#Bases de Datos Médicas de Interés para Éste Curso
+
+## Diabetes en Indios Pima
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(mlbench)
+data("PimaIndiansDiabetes")
+pima <- PimaIndiansDiabetes
+rm(PimaIndiansDiabetes)
+```
+
+
+Originalmente del *National Institute of Diabetes and Digestive and Kidney Disease*, el producto final liberado para la comunidad de aprendizaje automatizado contiene únicamente instancias de mujeres de, por lo menos, 21 años de edad de la étnia PIMA americana.
+
+Las variables se pueden interpretar como sigue:
+
+  - ***pregnant***: Número de embarazos tenidos.
+  - ***glucose***: Concentración de glucosa en plasma a las 2 horas de iniciado un test de tolerancia a la glucosa.
+  - ***pressure***: Presión arterial diastólica en mm/Hg
+  - ***triceps***: Medición de pliegue cutáneo en región del tríceps en milímetros.
+  - ***insulin***: Concentración sérica de insulina a las 2 horas de iniciado el test.
+  - ***mass***: Índice de masa corporal calculado con la siguiente fórmula: $\frac{peso \space en \space kg}{(altura \space en \space metros)^2}$
+  - ***pedigree***
+  - ***age***: Edad en años.
+  - ***diabetes***: Variable objetivo indicando si el paciente tiene o no tiene diabetes.
+  
+El **objetivo** de ésta base de datos es el ser utilizada para realizar predicciones de enfermedad con las variables predictoras proporcionadas a través de estadística computacional.
+
+## Heart Disease
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(data.table)
+heart <- fread('http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data')
+heart <- as.data.frame(heart)
+colnames(heart) <- c("age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","num")
+
+```
+
+
+Generada entre doctores de centros médicos en Budapest, Suiza, y Cleveland. Ésta base de datos contiene en su totalidad 76 atributos, aunque los trabajos publicados que la mencionan han utilizado los 14 atributos provenientes de Cleveland.
+
+Los 14 atributos usados por otros autores son:
+
+  - **age**
+  - **sex**
+  - **cp**: *tipo de dolor en el pecho*
+    1. Angina típica
+    1. Agina atípica
+    1. Dolor no anginoso
+    1. Asintomático
+  - **trestbps**: *presión arterial en reposo registrada en mm/Hg al ser admitido al hospital* 
+  - **chol**: *colesterol sérico en mg/dl.*
+  - **fbs**: *glucosa sérica en ayuno >120 mg/dl. 1 = verdadero, 2 = falso.*
+  - **restecg**: *Resultados del electrocardograma en reposo.*
+    - 0 = normal
+    - 1 = anormalidades de onda T o segmento ST (inversiones o depresiones >0.05mV)
+    - 2 = evidencia probable o definitiva de hipertrofia de ventrículo izquierdo por criterios de Estes.
+  - **thalach**: *máxima frecuencia cardiaca alcanzada.*
+  - **exang**: *angina inducida por el ejercicio. 1 = Si, 2 = No)*
+  - **oldpeak**: *depresión del segmento ST en el ECG inducido por ejercicio en contraste a reposo.*
+  - **slope**: *pendiente del segmento ST en ECG durante ejercicio.*
+    1. Pendiente positiva (hacia arriba).
+    2. Sin pendiente (plano).
+    3. Pendiente negativa (hacia abajo).
+  - **ca**: *número (0-3) de vasos mayores coloreados por fluoroscopía*
+  - **thal**:
+    - 3 = normal.
+    - 6 = defecto estático.
+    - 7 = defecto reversible.
+  - **num**: *Variable objetivo, diagnóstico de cardiopatía por angiografía.*
+    - 0 = <50% de estrechamiento de diámetro del vaso sanguíneo.
+    - 1 = >50% de estrechamiento de diámetro del vaso sanguíneo.
+    
+## Datos de Resonancias Magnéticas del cerebro
+
+```{r}
+library(oro.nifti)
+img <- readNIfTI("data/Template-T1-U8-RALPFH-BR.nii.gz", reorient = FALSE)
+class(img)
+
+dim(img)
+```
+
+###Visualizaciones iniciales
+
+####Todas las proyecciones
+
+```{r, fig.align='center'}
+image(img)
+```
+
+#### Visualizando el *slice* 225
+```{r, fig.align='center'}
+image(img, z = 225, plot.type = "single")
+```
+
+#### Proyecciones ortográficas
+```{r, fig.align='center'}
+orthographic(img)
+```
+

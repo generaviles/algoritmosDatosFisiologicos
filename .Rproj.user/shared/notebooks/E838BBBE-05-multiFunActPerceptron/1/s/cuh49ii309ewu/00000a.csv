@@ -1,0 +1,7 @@
+"0","#v1"
+"0","plot(resSonarV1$V1,"
+"0","     col = colors[resSonarV1$V2],"
+"0","     pch = 19,"
+"0","     xlab = ""Instancias"","
+"0","     ylab = ""Valores"","
+"0","     main = ""v1"")"

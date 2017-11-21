@@ -1,0 +1,310 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Algoritmos para el Análisis de Datos Fisiológicos},
+            pdfauthor={Gener Avilés R},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Algoritmos para el Análisis de Datos Fisiológicos}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Gener Avilés R}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2017-08-22}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Apuntes de clases.
+\end{abstract}
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Introducción}\label{introduccion}
+
+Éste curso es impartido en la \textbf{\emph{Maestría y Doctorado en
+Ciencias e Ingeniería (MyDCI)}} de la Facultad de Ingeniería,
+Arquitectura y Diseño de la Universidad Autónoma de Baja California,
+campus Ensenada.
+
+El curso es impartido por la
+\href{https://www.researchgate.net/profile/Maria_Cosio_Leon}{Dra. María
+de los Ángeles Cosío León}.
+
+\chapter{Conceptos Generales}\label{intro}
+
+\section{Derivadas, derivadas parciales y sus
+implicaciones.}\label{derivadas-derivadas-parciales-y-sus-implicaciones.}
+
+This methods tries to explain the correlation structure of a set of
+predictor variables using a smaller set o linear combinations of these
+variables called \textbf{\emph{components}}, note that \emph{components}
+are not variables, rather indicators of linear combinations between
+variables. Given a dataset with \(m\) variables a set of \(k\) linear
+combinations can be used to represent it (meaning that \(k\) contains
+almost as much information as the \(m\) variables), also \(k<<m\).
+
+\chapter{Funciones de Activación para Neuronas en Redes
+Computacionales}\label{funciones-de-activacion-para-neuronas-en-redes-computacionales}
+
+\begin{longtable}[]{@{}cllllllll@{}}
+\toprule
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+Name\strut
+\end{minipage} & \begin{minipage}[b]{0.01\columnwidth}\raggedright\strut
+Plot\strut
+\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright\strut
+Equation\strut
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedright\strut
+Derivative (with respect x)\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedright\strut
+Range\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+Order of Continuity\strut
+\end{minipage} & \begin{minipage}[b]{0.03\columnwidth}\raggedright\strut
+Monotonic\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\raggedright\strut
+Derivative Monotonic\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+Aproximates Identify Near the Origin\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+TanH\strut
+\end{minipage} & \begin{minipage}[t]{0.01\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+\(f(x) = tanh(x) = \frac{2}{1+e^2x}-1\)\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright\strut
+\(f'(x) = 1 - f(x)^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright\strut
+\((-1,1)\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\(C^\infty\)\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright\strut
+Yes\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright\strut
+No\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Yes\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+SoftSign\strut
+\end{minipage} & \begin{minipage}[t]{0.01\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+\(f(x)= \frac{x}{1+|x|}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright\strut
+\(f'(x)=1-f(x)^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright\strut
+\((-1,1)\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\(C^1\)\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright\strut
+Yes\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright\strut
+No\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Yes\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+SoftPlus\strut
+\end{minipage} & \begin{minipage}[t]{0.01\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+\(\displaystyle f(x)=\ln(1+e^{x})\)\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright\strut
+\(\displaystyle f'(x)={\frac {1}{1+e^{-x}}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright\strut
+\((0,\infty)\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\(C^\infty\)\strut
+\end{minipage} & \begin{minipage}[t]{0.03\columnwidth}\raggedright\strut
+Yes\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\raggedright\strut
+Yes\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+No\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+SoftExponential \textbar{} \textbar{}
+\(f(\alpha ,x) = \left\{{\begin{array}{rcl}-{\frac {\ln(1-\alpha (x+\alpha ))}{\alpha }}{\mbox{ for }}\alpha < 0\\x{\mbox{ for }}\alpha =0\\{\frac {e^{\alpha x}-1}{\alpha }}+\alpha {\mbox{ for }}\alpha > 0\end{array}}\right.\)
+\textbar{}
+\(f'(\alpha ,x)=\left\{{\begin{array}{rcl}{\frac {1}{1-\alpha (\alpha +x)}}{\mbox{ for }}\alpha <0\\e^{\alpha x}{\mbox{ for }}\alpha \geq 0\end{array}}\right.\)
+\textbar{} \((- \infty,\infty)\) \textbar{} \(C^\infty\) \textbar{} Yes
+\textbar{} Yes \textbar{} Yes iff \(\alpha = 0\) \textbar{}\\
+Sinusoid \textbar{} \textbar{} \(f(x)=\sin(x)\) \textbar{}
+\(f'(x)=\cos(x)\) \textbar{} \([-1,1]\) \textbar{} \(C^\infty\)
+\textbar{} No \textbar{} No \textbar{} Yes \textbar{}\\
+Sinc \textbar{} \textbar{}
+\(f(x)=\left\{{\begin{array}{rcl}1{\mbox{ for }}x=0\\{\frac {\sin(x)}{x}}{\mbox{ for }}x\neq 0\end{array}}\right.\)
+\textbar{}
+\(f'(x)=\left\{{\begin{array}{rcl}0{\mbox{ for }}x=0\\{\frac {\cos(x)}{x}}-{\frac {\sin(x)}{x^{2}}}{\mbox{ for }}x\neq 0\end{array}}\right.\)
+\textbar{} \([\approx -.217234,1]\) \textbar{} \(C^\infty\) \textbar{}
+No \textbar{} No \textbar{} No \textbar{}\\
+Scaled exponential linear unit (SELU) \textbar{} \textbar{}
+\(f(\alpha ,x)=\lambda \left\{{\begin{array}{rcl}\alpha (e^{x}-1){\mbox{ for }}x<0\\x{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\(\lambda =1.0507\) y \(\alpha =1.67326\) \textbar{}
+\(f'(\alpha ,x)=\lambda \left\{{\begin{array}{rcl}f(\alpha ,x)+\alpha {\mbox{ for }}x<0\\1{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{} \((-\lambda \alpha,\infty)\) \textbar{} \(C^0\) \textbar{}
+Yes \textbar{} No \textbar{} No \textbar{}\\
+Rectified linear unit (ReLU) \textbar{} \textbar{}
+\(f(x)=\left\{{\begin{array}{rcl}0{\mbox{ for }}x<0\\x{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{}
+\(f'(x)=\left\{{\begin{array}{rcl}0&{\mbox{for}}&x<0\\1&{\mbox{for}}&x\geq 0\end{array}}\right.\)
+\textbar{} \([0,\infty)\) \textbar{} \(C^0\) \textbar{} Yes \textbar{}
+Yes \textbar{} No \textbar{}\\
+Randomized leaky rectified linear unit (RReLU) \textbar{} \textbar{}
+\(f(\alpha ,x)=\left\{{\begin{array}{rcl}\alpha x {\mbox{ for }}x<0\\x{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{}
+\(f'(\alpha ,x)=\left\{{\begin{array}{rcl}\alpha {\mbox{ for }}x<0\\1{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{} \((-\infty, \infty)\) \textbar{} \(C^0\) \textbar{} Yes
+\textbar{} Yes \textbar{} No \textbar{}\\
+Parametric rectified linear unit (PReLU) \textbar{} \textbar{}
+\(f(\alpha ,x)=\left\{{\begin{array}{rcl}\alpha x{\mbox{ for }}x<0\\x{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{}
+\(f'(\alpha ,x)=\left\{{\begin{array}{rcl}\alpha {\mbox{ for }}x<0\\1{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{} \((-\infty, \infty)\) \textbar{} \(C^0\) \textbar{} Yes iff
+\(\alpha \geq 0\) \textbar{} Yes \textbar{} Yes iff \(\alpha = 1\)
+\textbar{}\\
+Logistic (a.k.a soft step) \textbar{} \textbar{}
+\(f(x)={\frac {1}{1+e^{-x}}}\) \textbar{} \(f'(x)=f(x)(1-f(x))\)
+\textbar{} (0,1) \textbar{} \(C^\infty\) \textbar{} Yes \textbar{} No
+\textbar{} No \textbar{}\\
+Leaky rectified linear unit (Leaky ReLU) \textbar{} \textbar{}
+\(f(x)=\left\{{\begin{array}{rcl}0.01x{\mbox{ for }}x<0\\x{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{}
+\(f'(x)=\left\{{\begin{array}{rcl}0.01{\mbox{ for }}x<0\\1{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{} \((-\infty, \infty)\) \textbar{} \(C^0\) \textbar{} Yes
+\textbar{} Yes \textbar{} No \textbar{}\\
+Identity \textbar{} \textbar{} \(f(x) = x\) \textbar{} \(f''(x) = 1\)
+\textbar{} \((-\infty, \infty)\) \textbar{} \(C^\infty\) \textbar{} Yes
+\textbar{} Yes \textbar{} Yes \textbar{}\\
+Gaussian \textbar{} \textbar{} \(f(x)=e^-x^2\) \textbar{}
+\(f'(x) = -2xe^-x^2\) \textbar{} \((0,1]\) \textbar{} \(C^\infty\)
+\textbar{} No \textbar{} No \textbar{} No \textbar{}\\
+Exponential linear unit (ELU) \textbar{} \textbar{}
+\(f(\alpha ,x)=\left\{{\begin{array}{rcl}\alpha (e^{x}-1){\mbox{ for }}x<0\\x{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{}
+\(f'(\alpha ,x)=\left\{{\begin{array}{rcl}f(\alpha ,x)+\alpha {\mbox{ for }}x<0\\1{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{} \((-\alpha,\infty)\) \textbar{} \(C^1\) when \(\alpha = 1\),
+otherwise \(C^0\) \textbar{} Yes iff \(\alpha \geq 0\) \textbar{} Yes
+iff \(0 \leq \alpha \leq 1\) \textbar{} \textbar{}\\
+Binary step \textbar{} \textbar{}
+\(\displaystyle f(x)=\left\{{\begin{array}{rcl}0{\mbox{ for }}x <0\\1{\mbox{ for }}x\geq 0\end{array}}\right.\)
+\textbar{}
+\(\displaystyle f'(x)=\left\{{\begin{array}{rcl}0{\mbox{ for }}x\neq 0\\?{\mbox{ for }}x=0\end{array}}\right.\)
+\textbar{} \{0,1\} \textbar{} \(C^{-1}\) \textbar{} Yes \textbar{} No
+\textbar{} No \textbar{}\\
+Bent Identity \textbar{} \textbar{}
+\(f(x)={\frac {{\sqrt {x^{2}+1}}-1}{2}}+x\) \textbar{}
+\(f'(x)={\frac {x}{2{\sqrt {x^{2}+1}}}}+1\) \textbar{}
+\((-\infty, \infty)\) \textbar{} \(C^\infty\) \textbar{} Yes \textbar{}
+Yes \textbar{} Yes \textbar{}\\
+ArcTan \textbar{} \textbar{} \(f(x)=\tan ^{-1}(x)\) \textbar{}
+\(f'(x)={\frac {1}{x^{2}+1}}\) \textbar{}
+\(\left ( -\frac{\pi}{2},\frac{\pi}{2} \right )\) \textbar{}
+\(C^\infty\) \textbar{} Yes \textbar{} No \textbar{} Yes \textbar{}\\
+Adaptive piecewise linear (APL) \textbar{} \textbar{}
+\(\displaystyle f(x)=\max(0,x)+\sum _{s=1}^{S}a_{i}^{s}\max(0,-x+b_{i}^{s})\)
+\textbar{}
+\(\displaystyle f'(x)=H(x)-\sum _{s=1}^{S}a_{i}^{s}H(-x+b_{i}^{s})\)
+\textbar{} \((-\infty, \infty)\) \textbar{} \(C^0\) \textbar{} No
+\textbar{} No \textbar{} No \textbar{}\\
+S-shaped rectified linear activation unit (SReLU) \textbar{} \textbar{}
+\$f\_\{t\_\{l\},a\_\{l\},t\_\{r\},a\_\{r\}\}(x)=\left\{\{\textbackslash{}begin\{array\}\{rcl\}t\_\{l\}+a\_\{l\}(x-t\_\{l\})\{\mbox{,for }\}x\leq t\_\{l\}\textbackslash{}x
+\{\mbox{ for,}\}t\_\{l\} \textbar{} \textbar{} \textbar{} \textbar{}
+\textbar{} \textbar{} \textbar{}
+
+\bibliography{packages,book}
+
+
+\end{document}

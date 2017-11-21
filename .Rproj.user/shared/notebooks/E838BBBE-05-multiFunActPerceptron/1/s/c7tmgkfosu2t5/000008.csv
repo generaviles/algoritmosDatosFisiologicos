@@ -1,0 +1,7 @@
+"0","#s4"
+"0","plot(resIrisS4$V1,"
+"0","     col = colors[resIrisS4$V2],"
+"0","     pch = 19,"
+"0","     xlab = ""Instancias"","
+"0","     ylab = ""Valores"","
+"0","     main = ""S4"")"

@@ -1,0 +1,5 @@
+"0","plot(x,y1,"
+"0","            main = ""Familia S-Shaped"","
+"0","            type = ""ln"","
+"0","            col = ""black"","
+"0","            lwd = 5)"

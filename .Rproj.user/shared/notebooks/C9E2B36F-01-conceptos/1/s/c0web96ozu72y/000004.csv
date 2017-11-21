@@ -1,0 +1,4 @@
+"0","rreluGener <- function(a,x){"
+"0","  xt<-x"
+"0","  xt[x<0]=a*x[x<0]"
+"0","  xt"

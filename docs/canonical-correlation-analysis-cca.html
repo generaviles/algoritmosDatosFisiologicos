@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Syllabus for the Datamining Class</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Syllabus for the Datamining Class" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Syllabus for the Datamining Class" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Gener Avilés R">
+
+
+<meta name="date" content="2017-04-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="self-organizing-maps-som.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Mining Syllabus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Principal Components Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-does-pca-do"><i class="fa fa-check"></i><b>2.1</b> What does PCA do?</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#pca-step-by-step"><i class="fa fa-check"></i><b>2.2</b> PCA Step by Step</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#getting-the-dataset-and-things-ready."><i class="fa fa-check"></i><b>2.2.1</b> 1. Getting the dataset and things ready.</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#centering-the-points"><i class="fa fa-check"></i><b>2.2.2</b> 2. Centering the points</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#compute-covariance-sigma_xy-matrix"><i class="fa fa-check"></i><b>2.2.3</b> 3. Compute covariance (<span class="math inline">\(\sigma_{X,Y}\)</span>) matrix</a></li>
+<li class="chapter" data-level="2.2.4" data-path="intro.html"><a href="intro.html#eigenvectors-eigenvalues"><i class="fa fa-check"></i><b>2.2.4</b> 4. Eigenvectors + Eigenvalues</a></li>
+<li class="chapter" data-level="2.2.5" data-path="intro.html"><a href="intro.html#pick-md-eigenvectors-with-highest-eigenvalues."><i class="fa fa-check"></i><b>2.2.5</b> 5. Pick <span class="math inline">\(m&lt;d\)</span> eigenvectors with highest eigenvalues.</a></li>
+<li class="chapter" data-level="2.2.6" data-path="intro.html"><a href="intro.html#project-datapoints-to-those-eigenvectors."><i class="fa fa-check"></i><b>2.2.6</b> 6. Project datapoints to those eigenvectors.</a></li>
+<li class="chapter" data-level="2.2.7" data-path="intro.html"><a href="intro.html#perform-analysis-as-needed-according-to-study."><i class="fa fa-check"></i><b>2.2.7</b> 7. Perform analysis as needed according to study.</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#pros-and-cons-of-pca"><i class="fa fa-check"></i><b>2.3</b> Pros and Cons of PCA</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html"><i class="fa fa-check"></i><b>3</b> Canonical Correlation Analysis (CCA)</a><ul>
+<li class="chapter" data-level="3.1" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#what-is-cca"><i class="fa fa-check"></i><b>3.1</b> What is CCA?</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#canonical-r-r_c"><i class="fa fa-check"></i><b>3.1.1</b> Canonical R (<strong><span class="math inline">\(R_c\)</span></strong>) <br \></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#assumptions-for-cca"><i class="fa fa-check"></i><b>3.2</b> Assumptions for CCA</a></li>
+<li class="chapter" data-level="3.3" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#objectives-of-cca"><i class="fa fa-check"></i><b>3.3</b> Objectives of CCA</a></li>
+<li class="chapter" data-level="3.4" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#terms-used-in-the-context-of-a-cca-analysis"><i class="fa fa-check"></i><b>3.4</b> Terms used in the context of a CCA analysis</a></li>
+<li class="chapter" data-level="3.5" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#interpreting-canonical-variates"><i class="fa fa-check"></i><b>3.5</b> Interpreting canonical variates</a></li>
+<li class="chapter" data-level="3.6" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#considerations-when-working-with-cca"><i class="fa fa-check"></i><b>3.6</b> Considerations when working with CCA</a></li>
+<li class="chapter" data-level="3.7" data-path="canonical-correlation-analysis-cca.html"><a href="canonical-correlation-analysis-cca.html#limitations-of-cca"><i class="fa fa-check"></i><b>3.7</b> Limitations of CCA</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html"><i class="fa fa-check"></i><b>4</b> Self Organizing Maps (SOM)</a><ul>
+<li class="chapter" data-level="4.1" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#other-names"><i class="fa fa-check"></i><b>4.1</b> Other names:</a></li>
+<li class="chapter" data-level="4.2" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#generalities"><i class="fa fa-check"></i><b>4.2</b> Generalities</a></li>
+<li class="chapter" data-level="4.3" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#penfields-homunculus"><i class="fa fa-check"></i><b>4.3</b> Penfield´s Homunculus</a></li>
+<li class="chapter" data-level="4.4" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#algorithm"><i class="fa fa-check"></i><b>4.4</b> Algorithm</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#conditions"><i class="fa fa-check"></i><b>4.4.1</b> Conditions</a></li>
+<li class="chapter" data-level="4.4.2" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#steps-of-the-algorithm"><i class="fa fa-check"></i><b>4.4.2</b> Steps of the algorithm</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#example"><i class="fa fa-check"></i><b>4.5</b> Example</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#summary-of-the-dataset"><i class="fa fa-check"></i><b>4.5.1</b> Summary of the dataset</a></li>
+<li class="chapter" data-level="4.5.2" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#training-phase"><i class="fa fa-check"></i><b>4.5.2</b> Training Phase</a></li>
+<li class="chapter" data-level="4.5.3" data-path="self-organizing-maps-som.html"><a href="self-organizing-maps-som.html#visualization"><i class="fa fa-check"></i><b>4.5.3</b> Visualization</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Syllabus for the Datamining Class</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="canonical-correlation-analysis-cca" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Canonical Correlation Analysis (CCA)</h1>
+<div id="what-is-cca" class="section level2">
+<h2><span class="header-section-number">3.1</span> What is CCA?</h2>
+<ul>
+<li>Seeks the weighted linear composit for each variate (sets of D.V. or I.V.) to maximize the overlap in their distributions.</li>
+<li>Labeling of DV and IV is arbitrary. The procedure looks for relationships and not causation.</li>
+<li>Goal is to <strong>maximize the correlation</strong> (not the variance extracted as in most other techniques).</li>
+<li>Lacks specificity in interpreting results, that may limit its usefulness in many situations.</li>
+</ul>
+<p>CCA helps us answer the questions:<br \></p>
+<ul>
+<li><strong><em>What is the best way to understand how the variables in two sets are related? </em></strong>, mathematically speaking:
+<ul>
+<li><strong><em>what linear combinations of the set <span class="math inline">\(X\)</span> variables (<span class="math inline">\(u\)</span>) and the set Y variables (<span class="math inline">\(t\)</span>) will maximize their correlation?</em></strong></li>
+</ul></li>
+</ul>
+<div id="canonical-r-r_c" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Canonical R (<strong><span class="math inline">\(R_c\)</span></strong>) <br \></h3>
+<p>It represents the overlapping variance between two variates which are linear composites of each set of variables.</p>
+</div>
+</div>
+<div id="assumptions-for-cca" class="section level2">
+<h2><span class="header-section-number">3.2</span> Assumptions for CCA</h2>
+<ul>
+<li>Multiple continuous variables for DVs and IVs or categorical with dummy coding.</li>
+<li>Assumes <strong>linear relationship</strong> between any two variables and between variates.</li>
+<li>Multivariate normality is necessary to perform CCA.</li>
+<li>Multicollinearity in either variate <strong>confounds</strong> interpretation of canonical results.</li>
+</ul>
+</div>
+<div id="objectives-of-cca" class="section level2">
+<h2><span class="header-section-number">3.3</span> Objectives of CCA</h2>
+<ul>
+<li>Determine the magnitude of the relationships that may existe between two sets of variables.</li>
+<li>Derive a variate(s) for each set of criterion and predictor variables such that the variate(s) of each set is maximally correlated.</li>
+<li>Explain the nature of whatever relationships exist between the sets of criterion and predictor variables.</li>
+<li>Seek the max correlation of shared variance between the two sides of the equation.</li>
+</ul>
+</div>
+<div id="terms-used-in-the-context-of-a-cca-analysis" class="section level2">
+<h2><span class="header-section-number">3.4</span> Terms used in the context of a CCA analysis</h2>
+<ul>
+<li><strong>Canonical correlation:</strong> Correlation between two sets; the largest possible correlation that can be found between linear combinations.</li>
+<li><strong>Canonical variate:</strong> The linear combinations created from the IV set and DV set.</li>
+<li><strong>Canonical weights:</strong> weights used to create the liniear combinations; interpreted like regression coefficients.</li>
+<li><strong>Canonical loadings:</strong> correlations between each variable and its variate; interpreted like loadings in PCA.</li>
+<li><strong>Canonical cross-loadings:</strong> Correlation of each observed independent or dependent variable with <em>opposite</em> canonical variate.</li>
+</ul>
+</div>
+<div id="interpreting-canonical-variates" class="section level2">
+<h2><span class="header-section-number">3.5</span> Interpreting canonical variates</h2>
+<ul>
+<li>Canonical weights
+<ul>
+<li>larger wight contributes more to the function.</li>
+<li>negative weight indicates an inverse relationship with other variables.</li>
+<li>always look out for multicollinearity, it can skew the whole analysis.</li>
+</ul></li>
+<li>Canonical Loadings.
+<ul>
+<li>A direct assessment of each variable´s contribution to its respective canonical variate.</li>
+<li>Larger loadings are interpreted as more important to deriving the canonical variate.</li>
+<li>Correlation between the original variable and its canonoical variate.</li>
+</ul></li>
+<li>Canonical Cross-Loadings
+<ul>
+<li>Measure of correlation of each original D.V. with the independent canonical variate.</li>
+<li>Direct assessment of the relationship between each D.V. and the independent variate.</li>
+<li>Provides a more pure measure of the dependent and independent variable relationship.</li>
+<li>Preferred approach to interpretation.</li>
+</ul></li>
+</ul>
+</div>
+<div id="considerations-when-working-with-cca" class="section level2">
+<h2><span class="header-section-number">3.6</span> Considerations when working with CCA</h2>
+<ul>
+<li>Small samples sizes may have an adverse effect.</li>
+<li>Suggested minimun sample size = 10 * # of values.</li>
+<li>Selection of variables to be included:</li>
+<li>Select them with domain knowledge or theoretical basis.</li>
+<li>Inclusion of irrelevant or deletion of relevant variables may adversely affect the entire canonical solution.</li>
+<li>All I.V.s must be interrelated and all D.V.s must be interrelated.</li>
+<li>Composition of D.V. and I.V. variates is critical to producing practical results.</li>
+</ul>
+</div>
+<div id="limitations-of-cca" class="section level2">
+<h2><span class="header-section-number">3.7</span> Limitations of CCA</h2>
+<ul>
+<li><span class="math inline">\(R_c\)</span> (canonical R) reflects only the variance shared by the linear composites, not the variances extracted from the variables.</li>
+<li>Canonical weights are subject to a great deal of instability, particularly when there is multicollinearity.</li>
+<li>Interpretation difficult because rotation is not possible.</li>
+<li>Precise statistics have not been developed to interpret canonical analysis.</li>
+</ul>
+<p>This chapter is under construction.</p>
+<div class="figure">
+<img src="img/candh.png" />
+
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="self-organizing-maps-som.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/generaviles/datamining.github.io/edit/master/02-cca.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

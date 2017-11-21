@@ -1,0 +1,6 @@
+"0","source(""funciones.R"")"
+"0","## 3.0"
+"0","p1.1 <- perceptron(pimam,o0,""s2"")"
+"0","p1.2 <- perceptron(pimam,o0,""s3"")"
+"0","p1.3 <- perceptron(pimam,o0,""s4"")"
+"0","red3.0 <- matrix(c(as.vector(p1.1), as.vector(p1.2), as.vector(p1.3)), nrow = 768, ncol = 3)"

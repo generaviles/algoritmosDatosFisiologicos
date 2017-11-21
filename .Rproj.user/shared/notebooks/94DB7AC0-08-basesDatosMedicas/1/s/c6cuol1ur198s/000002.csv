@@ -1,0 +1,3 @@
+"0","library(mlbench)"
+"0","pima <- PimaIndiansDiabetes"
+"0","rm(PimaIndiansDiabetes)"

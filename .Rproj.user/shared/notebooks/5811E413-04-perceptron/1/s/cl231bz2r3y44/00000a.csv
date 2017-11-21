@@ -1,0 +1,8 @@
+"0","colors <- c(""#3498DB"", ""#F7DC6F"", ""#82E0AA"")"
+"0","resTable$clasPercept <- as.factor(resTable$clasPercept)"
+"0","plot(resTable$perceptron,"
+"0","     col = colors[resTable$clasPercept],"
+"0","     pch = 19,"
+"0","     xlab = ""Instancias"","
+"0","     ylab = ""Valores"","
+"0","     main = ""Clasificación Final por el Perceptrón"")"

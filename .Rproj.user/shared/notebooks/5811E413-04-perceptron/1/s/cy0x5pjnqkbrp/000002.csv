@@ -1,0 +1,7 @@
+"0","start.time <- Sys.time()"
+"0","fun <- function(o,x) {"
+"0","  y <- 1/(1+exp(x[,1:4] %*% t(o)))"
+"0","time.taken <- Sys.time() - start.time"
+"0","{cat(""Proceso terminado en: "", time.taken, ""milisegundos."")}"
+"0","y"
+"0","}"

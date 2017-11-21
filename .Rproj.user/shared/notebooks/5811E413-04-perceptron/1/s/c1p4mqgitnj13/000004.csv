@@ -1,0 +1,2 @@
+"0","colnames(res) <- c(""Perceptrón"", ""Etiqueta"")"
+"0","head(res)"

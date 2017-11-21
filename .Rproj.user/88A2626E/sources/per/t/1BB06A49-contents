@@ -1,0 +1,121 @@
+# Conceptos Generales {#intro}
+
+##Derivadas, derivadas parciales y sus implicaciones.
+
+This methods tries to explain the correlation structure of a set of predictor variables using a smaller set o linear combinations of these variables called ***components***, note that *components* are not variables, rather indicators of linear combinations between variables.<br \>
+Given a dataset with $m$ variables a set of $k$ linear combinations can be used to represent it (meaning that $k$ contains almost as much information as the $m$ variables), also $k<<m$.
+
+
+##Funciones de Activación:
+
+###TanH
+```{r}
+TanHGener <- function(x0){
+  (2/(1+exp(-2*x))-1)
+}
+
+x <- seq(-5,5,.01)
+
+y <- TanHGener(x)
+plot(x,y,
+     main = "Tangente Hiperbólica TanH",
+     type = "l")
+```
+
+###Softsign
+```{r}
+softSignGener <- function(x){
+  x/(1+abs(x))
+}
+
+y1 <- softSignGener(x)
+
+plot(x,y1,
+     main = "Softsign",
+     type = "l")
+```
+
+###SoftExponential
+```{r}
+softExpGener <- function(a,x){
+  if (a < 0){
+    -1*((log(1-a*(x+a)))/a)
+  }
+  else {
+    if (a == 0){
+      x
+    }
+    else {
+      ((exp(a*x)-1)/a)+a
+    }
+  }
+}
+
+
+y2 <- softExpGener(-1,x)
+
+plot(x,y2,
+     main = "SoftExponential",
+     type = "l")
+```
+
+###SoftPlus
+```{r}
+softPlusGener <- function(x){
+  log(1+exp(x))
+}
+
+y3 <- softPlusGener(x)
+
+plot(x,y3,
+     type = "l",
+     main = "SoftPlus")
+```
+
+###Sinusoidal
+```{r}
+sinusoidalGener <- function(x){
+  sin(x)
+}
+
+y4 <- sinusoidalGener(x)
+
+plot(x,y4,
+     type = "l",
+     main = "Sinusoidal")
+```
+
+###Sinc
+```{r}
+sincGener <- function(x){
+  if (x==0){
+    1
+  }
+  else {
+    sin(x)/x
+  }
+}
+
+y5 <- sincGener(x)
+plot(x,y5,
+     type = "l",
+     main = "Sinc")
+```
+
+###Scaled exponential linear unit (SELU)
+```{r}
+seluGener <- function(l,a,x){
+  if (x < 0){
+    l*a*(exp(x)-1)
+  }
+  else {
+    l * x
+  }
+}
+
+y6 <- seluGener(1.0507, 1.67326,x)
+plot(x,y6,
+     type = "l",
+     main = "SELU")
+```
+###

@@ -1,0 +1,12 @@
+"0","library(data.table)"
+"0","heart <- fread('http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data')"
+"2","trying URL 'http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data'
+"
+"2","Content type 'text/plain; charset=UTF-8'"
+"2"," length 18461 bytes (18 KB)
+"
+"2","downloaded 18 KB
+
+"
+"0","heart <- as.data.frame(heart)"
+"0","colnames(heart) <- c(""age"",""sex"",""cp"",""trestbps"",""chol"",""fbs"",""restecg"",""thalach"",""exang"",""oldpeak"",""slope"",""ca"",""thal"",""num"")"

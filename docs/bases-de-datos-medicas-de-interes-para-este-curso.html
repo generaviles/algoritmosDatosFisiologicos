@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Algoritmos para el Análisis de Datos Fisiológicos</title>
+  <meta name="description" content="Algoritmos para el Análisis de Datos Fisiológicos">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Algoritmos para el Análisis de Datos Fisiológicos" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Algoritmos para el Análisis de Datos Fisiológicos" />
+  
+  
+  
+
+<meta name="author" content="Gener Avilés R">
+
+
+<meta name="date" content="2017-11-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ejercicio-con-datos-cercanos-a-cero.html">
+
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Algoritmos para el Proceso de Datos Fisiológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Conceptos Generales</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#derivadas-derivadas-parciales-y-sus-implicaciones."><i class="fa fa-check"></i><b>2.1</b> Derivadas, derivadas parciales y sus implicaciones.</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#funciones-de-activacion"><i class="fa fa-check"></i><b>2.2</b> Funciones de Activación:</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#tanh"><i class="fa fa-check"></i><b>2.2.1</b> TanH</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#softsign"><i class="fa fa-check"></i><b>2.2.2</b> Softsign</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#softplus"><i class="fa fa-check"></i><b>2.2.3</b> SoftPlus</a></li>
+<li class="chapter" data-level="2.2.4" data-path="intro.html"><a href="intro.html#softexponential"><i class="fa fa-check"></i><b>2.2.4</b> SoftExponential</a></li>
+<li class="chapter" data-level="2.2.5" data-path="intro.html"><a href="intro.html#sinusoid"><i class="fa fa-check"></i><b>2.2.5</b> Sinusoid</a></li>
+<li class="chapter" data-level="2.2.6" data-path="intro.html"><a href="intro.html#sinc"><i class="fa fa-check"></i><b>2.2.6</b> Sinc</a></li>
+<li class="chapter" data-level="2.2.7" data-path="intro.html"><a href="intro.html#scaled-exponential-linear-unit-selu"><i class="fa fa-check"></i><b>2.2.7</b> Scaled exponential linear unit (SELU)</a></li>
+<li class="chapter" data-level="2.2.8" data-path="intro.html"><a href="intro.html#rectified-linear-unit-relu"><i class="fa fa-check"></i><b>2.2.8</b> Rectified Linear Unit (ReLU)</a></li>
+<li class="chapter" data-level="2.2.9" data-path="intro.html"><a href="intro.html#randomized-leaky-rectified-linear-unit-rrelu"><i class="fa fa-check"></i><b>2.2.9</b> Randomized leaky rectified linear unit (RReLU)</a></li>
+<li class="chapter" data-level="2.2.10" data-path="intro.html"><a href="intro.html#parametric-rectified-linear-unit-prelu-is-just-as-rrelu"><i class="fa fa-check"></i><b>2.2.10</b> Parametric Rectified linear unit (PReLU) is just as RReLU</a></li>
+<li class="chapter" data-level="2.2.11" data-path="intro.html"><a href="intro.html#logistic-a.k.a-soft-step"><i class="fa fa-check"></i><b>2.2.11</b> Logistic (a.k.a Soft Step)</a></li>
+<li class="chapter" data-level="2.2.12" data-path="intro.html"><a href="intro.html#leaky-rectified-linear-unit-leaky-relu"><i class="fa fa-check"></i><b>2.2.12</b> Leaky rectified linear unit (Leaky ReLU)</a></li>
+<li class="chapter" data-level="2.2.13" data-path="intro.html"><a href="intro.html#identity"><i class="fa fa-check"></i><b>2.2.13</b> Identity</a></li>
+<li class="chapter" data-level="2.2.14" data-path="intro.html"><a href="intro.html#gaussian"><i class="fa fa-check"></i><b>2.2.14</b> Gaussian</a></li>
+<li class="chapter" data-level="2.2.15" data-path="intro.html"><a href="intro.html#exponential-linear-unit-elu"><i class="fa fa-check"></i><b>2.2.15</b> Exponential linear unit (ELU)</a></li>
+<li class="chapter" data-level="2.2.16" data-path="intro.html"><a href="intro.html#binary-step"><i class="fa fa-check"></i><b>2.2.16</b> Binary Step</a></li>
+<li class="chapter" data-level="2.2.17" data-path="intro.html"><a href="intro.html#bent-identity"><i class="fa fa-check"></i><b>2.2.17</b> Bent identity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="funciones-de-activacion-para-neuronas-en-redes-computacionales.html"><a href="funciones-de-activacion-para-neuronas-en-redes-computacionales.html"><i class="fa fa-check"></i><b>3</b> Funciones de Activación para Neuronas en Redes Computacionales</a></li>
+<li class="chapter" data-level="4" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html"><i class="fa fa-check"></i><b>4</b> Experimentos con Distintas Funciones de Activación</a><ul>
+<li class="chapter" data-level="4.1" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#funciones-s-shaped"><i class="fa fa-check"></i><b>4.1</b> Funciones S-Shaped</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#s1"><i class="fa fa-check"></i><b>4.1.1</b> S1</a></li>
+<li class="chapter" data-level="4.1.2" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#s2"><i class="fa fa-check"></i><b>4.1.2</b> S2</a></li>
+<li class="chapter" data-level="4.1.3" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#s3"><i class="fa fa-check"></i><b>4.1.3</b> S3</a></li>
+<li class="chapter" data-level="4.1.4" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#s4"><i class="fa fa-check"></i><b>4.1.4</b> S4</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#funciones-v-shaped"><i class="fa fa-check"></i><b>4.2</b> Funciones V-Shaped</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#v1"><i class="fa fa-check"></i><b>4.2.1</b> V1</a></li>
+<li class="chapter" data-level="4.2.2" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#v2"><i class="fa fa-check"></i><b>4.2.2</b> V2</a></li>
+<li class="chapter" data-level="4.2.3" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#v3"><i class="fa fa-check"></i><b>4.2.3</b> V3</a></li>
+<li class="chapter" data-level="4.2.4" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#v4"><i class="fa fa-check"></i><b>4.2.4</b> V4</a></li>
+<li class="chapter" data-level="4.2.5" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#visualizacion-de-familia-s-shaped"><i class="fa fa-check"></i><b>4.2.5</b> Visualización de Familia S-Shaped</a></li>
+<li class="chapter" data-level="4.2.6" data-path="experimentos-con-distintas-funciones-de-activacion.html"><a href="experimentos-con-distintas-funciones-de-activacion.html#visualizacion-de-familia-v-shaped"><i class="fa fa-check"></i><b>4.2.6</b> Visualización de familia V-Shaped</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html"><i class="fa fa-check"></i><b>5</b> Programando un Perceptrón Por las Piedritas</a><ul>
+<li class="chapter" data-level="5.1" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#base-de-datos-para-este-ejercicio"><i class="fa fa-check"></i><b>5.1</b> Base de datos para éste ejercicio</a></li>
+<li class="chapter" data-level="5.2" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#preparacion-de-los-datos-para-uso-del-perceptron"><i class="fa fa-check"></i><b>5.2</b> Preparación de los datos para uso del perceptrón</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#seleccion-y-preparacion-de-subconjunto-de-datos"><i class="fa fa-check"></i><b>5.2.1</b> Selección y preparacion de subconjunto de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#implementacion"><i class="fa fa-check"></i><b>5.3</b> Implementación</a></li>
+<li class="chapter" data-level="5.4" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#explorando-resultados-de-h_thetax"><i class="fa fa-check"></i><b>5.4</b> Explorando resultados de <span class="math inline">\(h_{\theta}(x)\)</span></a><ul>
+<li class="chapter" data-level="5.4.1" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#resultados-en-tabla"><i class="fa fa-check"></i><b>5.4.1</b> Resultados en tabla</a></li>
+<li class="chapter" data-level="5.4.2" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#boxplots"><i class="fa fa-check"></i><b>5.4.2</b> Boxplots</a></li>
+<li class="chapter" data-level="5.4.3" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#clasificacion-con-parametros-calculados"><i class="fa fa-check"></i><b>5.4.3</b> Clasificación con parámetros calculados</a></li>
+<li class="chapter" data-level="5.4.4" data-path="programando-un-perceptron-por-las-piedritas.html"><a href="programando-un-perceptron-por-las-piedritas.html#visualizacion-de-clasificacion"><i class="fa fa-check"></i><b>5.4.4</b> Visualización de Clasificación</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html"><i class="fa fa-check"></i><b>6</b> Distintas Funciones de Activación en un Perceptrón</a><ul>
+<li class="chapter" data-level="6.1" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#datos-a-utilizar"><i class="fa fa-check"></i><b>6.1</b> Datos a utilizar</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#iris"><i class="fa fa-check"></i><b>6.1.1</b> Iris</a></li>
+<li class="chapter" data-level="6.1.2" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#pima"><i class="fa fa-check"></i><b>6.1.2</b> Pima</a></li>
+<li class="chapter" data-level="6.1.3" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#sonar"><i class="fa fa-check"></i><b>6.1.3</b> Sonar</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#preparacion-de-los-datos-para-uso-del-perceptron-1"><i class="fa fa-check"></i><b>6.2</b> Preparación de los datos para uso del perceptrón</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#seleccion-y-preparacion-de-subconjunto-de-datos-1"><i class="fa fa-check"></i><b>6.2.1</b> Selección y preparacion de subconjunto de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#explorando-resultados-por-funcion"><i class="fa fa-check"></i><b>6.3</b> Explorando resultados por función</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#graficando-las-funciones"><i class="fa fa-check"></i><b>6.3.1</b> Graficando las funciones</a></li>
+<li class="chapter" data-level="6.3.2" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#con-los-datos-de-iris"><i class="fa fa-check"></i><b>6.3.2</b> Con los datos de Iris</a></li>
+<li class="chapter" data-level="6.3.3" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#con-los-datos-pima"><i class="fa fa-check"></i><b>6.3.3</b> Con los datos <code>pima</code></a></li>
+<li class="chapter" data-level="6.3.4" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#con-los-datos-sonar"><i class="fa fa-check"></i><b>6.3.4</b> Con los datos <code>sonar</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#observaciones"><i class="fa fa-check"></i><b>6.4</b> Observaciones</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#modificacion-de-los-datos-en-funcion-a-las-observaciones"><i class="fa fa-check"></i><b>6.4.1</b> Modificación de los datos en función a las observaciones</a></li>
+<li class="chapter" data-level="6.4.2" data-path="distintas-funciones-de-activacion-en-un-perceptron.html"><a href="distintas-funciones-de-activacion-en-un-perceptron.html#visualizacion"><i class="fa fa-check"></i><b>6.4.2</b> Visualización</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html"><i class="fa fa-check"></i><b>7</b> Red Neuronal Sin Retropropagación</a><ul>
+<li class="chapter" data-level="7.1" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#cargando-y-preparando-datos-a-utilizar"><i class="fa fa-check"></i><b>7.1</b> Cargando y preparando datos a utilizar</a></li>
+<li class="chapter" data-level="7.2" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#preparando-pesos"><i class="fa fa-check"></i><b>7.2</b> Preparando pesos</a></li>
+<li class="chapter" data-level="7.3" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#construyendo-la-red"><i class="fa fa-check"></i><b>7.3</b> Construyendo la red</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#capa-de-acceso-de-los-datos-3-perceptrones"><i class="fa fa-check"></i><b>7.3.1</b> Capa de acceso de los datos (3 perceptrones)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#capa-intermedia-2-perceptrones"><i class="fa fa-check"></i><b>7.3.2</b> Capa intermedia (2 perceptrones)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#capa-de-salida-1-perceptron"><i class="fa fa-check"></i><b>7.4</b> Capa de salida (1 perceptrón)</a></li>
+<li class="chapter" data-level="7.5" data-path="red-neuronal-sin-retropropagacion.html"><a href="red-neuronal-sin-retropropagacion.html#visualizacion-1"><i class="fa fa-check"></i><b>7.5</b> Visualización</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ejercicio-con-datos-cercanos-a-cero.html"><a href="ejercicio-con-datos-cercanos-a-cero.html"><i class="fa fa-check"></i><b>8</b> Ejercicio con Datos Cercanos a Cero</a><ul>
+<li class="chapter" data-level="8.1" data-path="ejercicio-con-datos-cercanos-a-cero.html"><a href="ejercicio-con-datos-cercanos-a-cero.html#base-de-datos-para-este-ejercicio-1"><i class="fa fa-check"></i><b>8.1</b> Base de datos para éste ejercicio</a></li>
+<li class="chapter" data-level="8.2" data-path="ejercicio-con-datos-cercanos-a-cero.html"><a href="ejercicio-con-datos-cercanos-a-cero.html#preparacion-de-los-datos-para-uso-del-perceptron-2"><i class="fa fa-check"></i><b>8.2</b> Preparación de los datos para uso del perceptrón</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="ejercicio-con-datos-cercanos-a-cero.html"><a href="ejercicio-con-datos-cercanos-a-cero.html#seleccion-y-preparacion-de-subconjunto-de-datos-2"><i class="fa fa-check"></i><b>8.2.1</b> Selección y preparacion de subconjunto de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ejercicio-con-datos-cercanos-a-cero.html"><a href="ejercicio-con-datos-cercanos-a-cero.html#explorando-resultados-por-funcion-1"><i class="fa fa-check"></i><b>8.3</b> Explorando resultados por función</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="ejercicio-con-datos-cercanos-a-cero.html"><a href="ejercicio-con-datos-cercanos-a-cero.html#boxplots-1"><i class="fa fa-check"></i><b>8.3.1</b> Boxplots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="bases-de-datos-medicas-de-interes-para-este-curso.html"><a href="bases-de-datos-medicas-de-interes-para-este-curso.html"><i class="fa fa-check"></i><b>9</b> Bases de Datos Médicas de Interés para Éste Curso</a><ul>
+<li class="chapter" data-level="9.1" data-path="bases-de-datos-medicas-de-interes-para-este-curso.html"><a href="bases-de-datos-medicas-de-interes-para-este-curso.html#diabetes-en-indios-pima"><i class="fa fa-check"></i><b>9.1</b> Diabetes en Indios Pima</a></li>
+<li class="chapter" data-level="9.2" data-path="bases-de-datos-medicas-de-interes-para-este-curso.html"><a href="bases-de-datos-medicas-de-interes-para-este-curso.html#heart-disease"><i class="fa fa-check"></i><b>9.2</b> Heart Disease</a></li>
+<li class="chapter" data-level="9.3" data-path="bases-de-datos-medicas-de-interes-para-este-curso.html"><a href="bases-de-datos-medicas-de-interes-para-este-curso.html#datos-de-resonancias-magneticas-del-cerebro"><i class="fa fa-check"></i><b>9.3</b> Datos de Resonancias Magnéticas del cerebro</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="bases-de-datos-medicas-de-interes-para-este-curso.html"><a href="bases-de-datos-medicas-de-interes-para-este-curso.html#visualizaciones-iniciales"><i class="fa fa-check"></i><b>9.3.1</b> Visualizaciones iniciales</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Algoritmos para el Análisis de Datos Fisiológicos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bases-de-datos-medicas-de-interes-para-este-curso" class="section level1">
+<h1><span class="header-section-number">Capítulo 9</span> Bases de Datos Médicas de Interés para Éste Curso</h1>
+<div id="diabetes-en-indios-pima" class="section level2">
+<h2><span class="header-section-number">9.1</span> Diabetes en Indios Pima</h2>
+<p>Originalmente del <em>National Institute of Diabetes and Digestive and Kidney Disease</em>, el producto final liberado para la comunidad de aprendizaje automatizado contiene únicamente instancias de mujeres de, por lo menos, 21 años de edad de la étnia PIMA americana.</p>
+<p>Las variables se pueden interpretar como sigue:</p>
+<ul>
+<li><strong><em>pregnant</em></strong>: Número de embarazos tenidos.</li>
+<li><strong><em>glucose</em></strong>: Concentración de glucosa en plasma a las 2 horas de iniciado un test de tolerancia a la glucosa.</li>
+<li><strong><em>pressure</em></strong>: Presión arterial diastólica en mm/Hg</li>
+<li><strong><em>triceps</em></strong>: Medición de pliegue cutáneo en región del tríceps en milímetros.</li>
+<li><strong><em>insulin</em></strong>: Concentración sérica de insulina a las 2 horas de iniciado el test.</li>
+<li><strong><em>mass</em></strong>: Índice de masa corporal calculado con la siguiente fórmula: <span class="math inline">\(\frac{peso \space en \space kg}{(altura \space en \space metros)^2}\)</span></li>
+<li><strong><em>pedigree</em></strong></li>
+<li><strong><em>age</em></strong>: Edad en años.</li>
+<li><strong><em>diabetes</em></strong>: Variable objetivo indicando si el paciente tiene o no tiene diabetes.</li>
+</ul>
+<p>El <strong>objetivo</strong> de ésta base de datos es el ser utilizada para realizar predicciones de enfermedad con las variables predictoras proporcionadas a través de estadística computacional.</p>
+</div>
+<div id="heart-disease" class="section level2">
+<h2><span class="header-section-number">9.2</span> Heart Disease</h2>
+<p>Generada entre doctores de centros médicos en Budapest, Suiza, y Cleveland. Ésta base de datos contiene en su totalidad 76 atributos, aunque los trabajos publicados que la mencionan han utilizado los 14 atributos provenientes de Cleveland.</p>
+<p>Los 14 atributos usados por otros autores son:</p>
+<ul>
+<li><strong>age</strong></li>
+<li><strong>sex</strong></li>
+<li><strong>cp</strong>: <em>tipo de dolor en el pecho</em>
+<ol style="list-style-type: decimal">
+<li>Angina típica</li>
+<li>Agina atípica</li>
+<li>Dolor no anginoso</li>
+<li>Asintomático</li>
+</ol></li>
+<li><strong>trestbps</strong>: <em>presión arterial en reposo registrada en mm/Hg al ser admitido al hospital</em></li>
+<li><strong>chol</strong>: <em>colesterol sérico en mg/dl.</em></li>
+<li><strong>fbs</strong>: <em>glucosa sérica en ayuno &gt;120 mg/dl. 1 = verdadero, 2 = falso.</em></li>
+<li><strong>restecg</strong>: <em>Resultados del electrocardograma en reposo.</em>
+<ul>
+<li>0 = normal</li>
+<li>1 = anormalidades de onda T o segmento ST (inversiones o depresiones &gt;0.05mV)</li>
+<li>2 = evidencia probable o definitiva de hipertrofia de ventrículo izquierdo por criterios de Estes.</li>
+</ul></li>
+<li><strong>thalach</strong>: <em>máxima frecuencia cardiaca alcanzada.</em></li>
+<li><strong>exang</strong>: <em>angina inducida por el ejercicio. 1 = Si, 2 = No)</em></li>
+<li><strong>oldpeak</strong>: <em>depresión del segmento ST en el ECG inducido por ejercicio en contraste a reposo.</em></li>
+<li><strong>slope</strong>: <em>pendiente del segmento ST en ECG durante ejercicio.</em>
+<ol style="list-style-type: decimal">
+<li>Pendiente positiva (hacia arriba).</li>
+<li>Sin pendiente (plano).</li>
+<li>Pendiente negativa (hacia abajo).</li>
+</ol></li>
+<li><strong>ca</strong>: <em>número (0-3) de vasos mayores coloreados por fluoroscopía</em></li>
+<li><strong>thal</strong>:
+<ul>
+<li>3 = normal.</li>
+<li>6 = defecto estático.</li>
+<li>7 = defecto reversible.</li>
+</ul></li>
+<li><strong>num</strong>: <em>Variable objetivo, diagnóstico de cardiopatía por angiografía.</em>
+<ul>
+<li>0 = &lt;50% de estrechamiento de diámetro del vaso sanguíneo.</li>
+<li>1 = &gt;50% de estrechamiento de diámetro del vaso sanguíneo.</li>
+</ul></li>
+</ul>
+</div>
+<div id="datos-de-resonancias-magneticas-del-cerebro" class="section level2">
+<h2><span class="header-section-number">9.3</span> Datos de Resonancias Magnéticas del cerebro</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(oro.nifti)</code></pre></div>
+<pre><code>## oro.nifti 0.7.2</code></pre>
+<pre><code>## 
+## Attaching package: &#39;oro.nifti&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:pracma&#39;:
+## 
+##     magic</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">img &lt;-<span class="st"> </span><span class="kw">readNIfTI</span>(<span class="st">&quot;data/Template-T1-U8-RALPFH-BR.nii.gz&quot;</span>, <span class="dt">reorient =</span> <span class="ot">FALSE</span>)
+<span class="kw">class</span>(img)</code></pre></div>
+<pre><code>## [1] &quot;nifti&quot;
+## attr(,&quot;package&quot;)
+## [1] &quot;oro.nifti&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(img)</code></pre></div>
+<pre><code>## [1] 182 512 512</code></pre>
+<div id="visualizaciones-iniciales" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> Visualizaciones iniciales</h3>
+<div id="todas-las-proyecciones" class="section level4">
+<h4><span class="header-section-number">9.3.1.1</span> Todas las proyecciones</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">image</span>(img)</code></pre></div>
+<p><img src="algoritmos-fisiologicos_files/figure-html/unnamed-chunk-44-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="visualizando-el-slice-225" class="section level4">
+<h4><span class="header-section-number">9.3.1.2</span> Visualizando el <em>slice</em> 225</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">image</span>(img, <span class="dt">z =</span> <span class="dv">225</span>, <span class="dt">plot.type =</span> <span class="st">&quot;single&quot;</span>)</code></pre></div>
+<p><img src="algoritmos-fisiologicos_files/figure-html/unnamed-chunk-45-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="proyecciones-ortograficas" class="section level4">
+<h4><span class="header-section-number">9.3.1.3</span> Proyecciones ortográficas</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">orthographic</span>(img)</code></pre></div>
+<p><img src="algoritmos-fisiologicos_files/figure-html/unnamed-chunk-46-1.png" width="672" style="display: block; margin: auto;" /></p>
+
+<div id="refs" class="references">
+<div>
+<p>Gorman, R Paul, and Terrence J Sejnowski. 1988. “Analysis of Hidden Units in a Layered Network Trained to Classify Sonar Targets.” <em>Neural Networks</em> 1 (1). Elsevier: 75–89.</p>
+</div>
+<div>
+<p>Mirjalili, Seyedali, and Andrew Lewis. 2013. “S-Shaped Versus V-Shaped Transfer Functions for Binary Particle Swarm Optimization.” <em>Swarm and Evolutionary Computation</em> 9. Elsevier: 1–14.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ejercicio-con-datos-cercanos-a-cero.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/generaviles/datamining.github.io/edit/master/08-basesDatosMedicas.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

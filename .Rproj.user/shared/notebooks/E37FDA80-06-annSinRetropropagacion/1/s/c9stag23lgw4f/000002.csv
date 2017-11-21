@@ -1,0 +1,6 @@
+"0","library(mlbench)"
+"0","#Cargando"
+"0","data(""PimaIndiansDiabetes"")"
+"0","pima <- PimaIndiansDiabetes"
+"0","pimam <- as.matrix(pima[,-9])"
+"0","pimam <- scale(pimam)"

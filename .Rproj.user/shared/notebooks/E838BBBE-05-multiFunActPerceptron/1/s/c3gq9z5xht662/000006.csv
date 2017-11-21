@@ -1,0 +1,7 @@
+"0","#s3"
+"0","plot(resIrisModS3$V1,"
+"0","     col = colors[resIrisModS3$V2],"
+"0","     pch = 19,"
+"0","     xlab = ""Instancias"","
+"0","     ylab = ""Valores"","
+"0","     main = ""S3"")"
