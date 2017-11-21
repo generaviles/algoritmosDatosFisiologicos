@@ -2,7 +2,6 @@
 title: "Algoritmos para el Análisis de Datos Fisiológicos"
 author: "Gener Avilés R"
 date: "`r Sys.Date()`"
-abstract: Apuntes de clases.
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
